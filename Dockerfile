@@ -1,9 +1,9 @@
 FROM phusion/baseimage:latest
 
 LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
-      org.label-schema.description="This container runs the updating services for all scoop manifest repos" \
+      org.label-schema.description="This container runs the updating services for all Scoop buckets" \
       org.label-schema.url="https://github.com/lukesampson/scoop" \
-      org.label-schema.vcs-url="https://github.com/r15ch13/scoop-updater" \
+      org.label-schema.vcs-url="https://github.com/r15ch13/excavator" \
       org.label-schema.schema-version="1.0.0-rc1"
 
 CMD ["/sbin/my_init"]
@@ -34,9 +34,9 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | tee /etc/apt/sources.list.d/microsoft.list
 
 # Install cronjob
-ADD updater.sh /opt/updater.sh
-RUN chmod +x /opt/updater.sh \
-    && echo "0 * * * * root sh /opt/updater.sh > /opt/log.txt" >> /etc/crontab
+ADD excavate.sh /opt/excavate.sh
+RUN chmod +x /opt/excavate.sh \
+    && echo "0 * * * * root sh /opt/excavate.sh > /opt/log.txt" >> /etc/crontab
 
 # Install hub
 RUN curl -LO https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz \
