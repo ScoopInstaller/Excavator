@@ -61,13 +61,13 @@ RUN mkdir -p /root/.ssh \
 VOLUME /root/.ssh
 
 # Clone scoop repos and configure git remotes
-RUN git config --global core.autocrlf true
-RUN git clone https://github.com/lukesampson/scoop /opt/scoop
-RUN git clone https://github.com/lukesampson/scoop-extras /opt/scoop-extras
-RUN git clone https://github.com/scoopinstaller/versions /opt/scoop-versions
-RUN cd /opt/scoop && git remote set-url --push origin git@github.com:lukesampson/scoop.git
-RUN cd /opt/scoop-extras && git remote set-url --push origin git@github.com:lukesampson/scoop-extras.git
-RUN cd /opt/scoop-versions && git remote set-url --push origin git@github.com:scoopinstaller/versions.git
+RUN git config --global core.autocrlf true \
+    && git clone https://github.com/lukesampson/scoop /opt/scoop \
+    && cd /opt/scoop && git remote set-url --push origin git@github.com:lukesampson/scoop.git
+    && git clone https://github.com/lukesampson/scoop-extras /opt/scoop-extras \
+    && cd /opt/scoop-extras && git remote set-url --push origin git@github.com:lukesampson/scoop-extras.git \
+    && git clone https://github.com/scoopinstaller/versions /opt/scoop-versions \
+    && cd /opt/scoop-versions && git remote set-url --push origin git@github.com:scoopinstaller/versions.git
 
 # Add scoop environment variables to powershell profile
 RUN echo '$env:SCOOP="/opt/scoop' > /root/.config/powershell/Microsoft.PowerShell_profile.ps1 \
