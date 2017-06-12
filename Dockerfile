@@ -63,7 +63,7 @@ VOLUME /root/.ssh
 # Clone scoop repos and configure git remotes
 RUN git config --global core.autocrlf true \
     && git clone https://github.com/lukesampson/scoop /opt/scoop \
-    && cd /opt/scoop && git remote set-url --push origin git@github.com:lukesampson/scoop.git
+    && cd /opt/scoop && git remote set-url --push origin git@github.com:lukesampson/scoop.git \
     && git clone https://github.com/lukesampson/scoop-extras /opt/scoop-extras \
     && cd /opt/scoop-extras && git remote set-url --push origin git@github.com:lukesampson/scoop-extras.git \
     && git clone https://github.com/scoopinstaller/versions /opt/scoop-versions \
