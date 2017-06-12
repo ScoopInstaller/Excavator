@@ -21,10 +21,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Setup the locale
-ENV LANG en_US.UTF-8
-ENV LC_ALL $LANG
-ENV GIT_USERNAME
-ENV GIT_EMAIL
+ENV GIT_USERNAME=
+ENV GIT_EMAIL=
+ENV LANG=en_US.UTF-8
+ENV LC_ALL=$LANG
 RUN locale-gen $LANG && update-locale
 
 # Import the public repository GPG keys for Microsoft
