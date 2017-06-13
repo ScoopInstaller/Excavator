@@ -36,7 +36,7 @@ RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | tee /etc
 # Install cronjob
 ADD excavate.sh /opt/excavate.sh
 RUN chmod +x /opt/excavate.sh \
-    && echo "0 * * * * root sh /opt/excavate.sh > /opt/log.txt" >> /etc/crontab
+    && echo "0 * * * * root sh /opt/excavate.sh > /opt/log.txt 2>&1" >> /etc/crontab
 
 # Install hub
 RUN curl -LO https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz \
