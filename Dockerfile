@@ -57,6 +57,10 @@ RUN mkdir -p /root/.ssh \
     && mkdir -p /root/.config/powershell \
     && mkdir -p /opt/cache
 
+# add github.com to known_hosts and generate private/public key
+RUN if ! grep "$(ssh-keyscan github.com 2>/dev/null)" /root/.ssh/known_hosts > /dev/null; then ssh-keyscan github.com >> /root/.ssh/known_hosts; fi
+RUN [ -f "/root/.ssh/id_rsa" ] || ssh-keygen -t rsa -b 4096 -C "scoop-excavator" -f /root/.ssh/id_rsa -N ""
+
 # Expose ssh volume
 VOLUME /root/.ssh
 

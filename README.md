@@ -12,6 +12,8 @@ This container runs the updating services for all [Scoop](http://scoop.sh) bucke
 λ docker run -v /path/to/.ssh:/root/.ssh r15ch13/excavator
 ```
 
+Add generated public to your Github account.
+
 ## Environment Variables
 Required for pushing changes with correct name/email to Github.
 ```
