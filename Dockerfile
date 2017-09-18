@@ -36,7 +36,9 @@ RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | tee /etc
 # Install cronjob
 ADD excavate.sh /opt/excavate.sh
 RUN chmod +x /opt/excavate.sh \
-    && echo "0 * * * * root sh /opt/excavate.sh > /opt/log.txt 2>&1" >> /etc/crontab
+    && echo "0 * * * * root sh /opt/excavate.sh > /opt/log/main.log 2>&1" >> /etc/crontab \
+    && echo "0 * * * * root sh /opt/excavate-extras.sh > /opt/log/extras.log 2>&1" >> /etc/crontab \
+    && echo "0 * * * * root sh /opt/excavate-versions.sh > /opt/log/versions.log 2>&1" >> /etc/crontab
 
 # Install hub
 RUN curl -LO https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz \
@@ -55,14 +57,15 @@ RUN apt-get update \
 # Create required directories
 RUN mkdir -p /root/.ssh \
     && mkdir -p /root/.config/powershell \
-    && mkdir -p /opt/cache
+    && mkdir -p /opt/cache \
+    && mkdir -p /opt/log
 
 # add github.com to known_hosts and generate private/public key
 RUN if ! grep "$(ssh-keyscan github.com 2>/dev/null)" /root/.ssh/known_hosts > /dev/null; then ssh-keyscan github.com >> /root/.ssh/known_hosts; fi
 RUN [ -f "/root/.ssh/id_rsa" ] || ssh-keygen -t rsa -b 4096 -C "scoop-excavator" -f /root/.ssh/id_rsa -N ""
 
 # Expose ssh volume
-VOLUME /root/.ssh
+VOLUME /root/.ssh /opt/log
 
 # Clone scoop repos and configure git remotes
 RUN git config --global core.autocrlf true \
