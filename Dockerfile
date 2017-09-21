@@ -34,8 +34,8 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
 RUN curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list | tee /etc/apt/sources.list.d/microsoft.list
 
 # Install cronjob
-ADD excavate.sh /opt/excavate.sh
-RUN chmod +x /opt/excavate.sh \
+ADD excavate*.sh /opt/
+RUN chmod +x /opt/excavate*.sh \
     && echo "0 * * * * root sh /opt/excavate.sh > /opt/log/main.log 2>&1" >> /etc/crontab \
     && echo "0 * * * * root sh /opt/excavate-extras.sh > /opt/log/extras.log 2>&1" >> /etc/crontab \
     && echo "0 * * * * root sh /opt/excavate-versions.sh > /opt/log/versions.log 2>&1" >> /etc/crontab
