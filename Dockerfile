@@ -57,7 +57,9 @@ RUN apt-get update \
 # Create required directories
 RUN mkdir -p /root/.ssh \
     && mkdir -p /root/.config/powershell \
-    && mkdir -p /opt/cache \
+    && mkdir -p /opt/cache/main \
+    && mkdir -p /opt/cache/extras \
+    && mkdir -p /opt/cache/versions \
     && mkdir -p /opt/log
 
 # add github.com to known_hosts and generate private/public key
