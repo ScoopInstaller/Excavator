@@ -79,6 +79,6 @@ RUN git config --global core.autocrlf true \
     && cd /opt/scoop-versions && git remote set-url --push origin git@github.com:scoopinstaller/versions.git
 
 # Add scoop environment variables to powershell profile
-RUN echo '$env:SCOOP="/opt/scoop"' > /root/.config/powershell/Microsoft.PowerShell_profile.ps1 \
-    && echo '$env:SCOOP_HOME="/opt/scoop"' >>/root/.config/powershell/Microsoft.PowerShell_profile.ps1 \
-    && echo '$env:SCOOP_CACHE="/opt/cache"' >> /root/.config/powershell/Microsoft.PowerShell_profile.ps1
+RUN echo '$env:SCOOP="/opt/scoop"' > /root/.config/powershell/profile.ps1 \
+    && echo '$env:SCOOP_HOME="/opt/scoop"' >>/root/.config/powershell/profile.ps1 \
+    && echo '$env:SCOOP_CACHE="/opt/cache"' >> /root/.config/powershell/profile.ps1
