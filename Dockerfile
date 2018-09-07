@@ -41,11 +41,11 @@ RUN chmod +x /opt/excavate*.sh \
     && echo "0 * * * * root sh /opt/excavate-versions.sh > /opt/log/versions.log 2>&1" >> /etc/crontab
 
 # Install hub
-RUN curl -LO https://github.com/github/hub/releases/download/v2.2.9/hub-linux-amd64-2.2.9.tgz \
-    && tar zxvvf hub-linux-amd64-2.2.9.tgz \
-    && ./hub-linux-amd64-2.2.9/install \
-    && rm hub-linux-amd64-2.2.9.tgz \
-    && rm -rf hub-linux-amd64-2.2.9/*
+RUN curl -LO https://github.com/github/hub/releases/download/v2.5.1/hub-linux-amd64-2.5.1.tgz \
+    && tar zxvvf hub-linux-amd64-2.5.1.tgz \
+    && ./hub-linux-amd64-2.5.1/install \
+    && rm hub-linux-amd64-2.5.1.tgz \
+    && rm -rf hub-linux-amd64-2.5.1/*
 
 # Install powershell from Microsoft Repo
 RUN apt-get update \
