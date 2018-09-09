@@ -1,7 +1,7 @@
 # Excavator 🕳️
 [![](https://images.microbadger.com/badges/image/r15ch13/excavator.svg)](https://microbadger.com/images/r15ch13/excavator) [![](https://images.microbadger.com/badges/version/r15ch13/excavator.svg)](https://microbadger.com/images/r15ch13/excavator)
 
-This image provides allows for automated updates of [Scoop](http://scoop.sh) buckets.
+This image allows for automated updates of [Scoop](http://scoop.sh) buckets.
 
 ## Usage
 - Add `bin\bucket-updater.ps1` to your Bucket (see: [bucket-updater.ps1](#example-bin_bucket-updater.ps1))
