@@ -60,6 +60,5 @@ volumes:
 - [Extras Bucket](https://github.com/lukesampson/scoop-extras)
 - [Versions Bucket](https://github.com/scoopinstaller/versions)
 
-
 # License
 [The MIT License (MIT)](https://r15ch13.mit-license.org/)
