@@ -37,19 +37,20 @@ cd /root/bucket
 rm /root/cache/* 2> /dev/null
 
 echo 'Excavating ...'
+ARGS=
 if [ $METHOD == 'push' ]; then
-    if [ -f /root/bucket/bin/auto-pr.ps1 ]; then
-        pwsh /root/bucket/bin/auto-pr.ps1 -r -s $SNOWFLAKES
-    fi
-    if [ -f /root/bucket/bin/bucket-updater.ps1 ]; then
-        pwsh /root/bucket/bin/bucket-updater.ps1 -r -s $SNOWFLAKES
-    fi
+    ARGS="-p"
 else
-    if [ -f /root/bucket/bin/auto-pr.ps1 ]; then
-        pwsh /root/bucket/bin/auto-pr.ps1 -r -s $SNOWFLAKES
-    fi
-    if [ -f /root/bucket/bin/bucket-updater.ps1 ]; then
-        pwsh /root/bucket/bin/bucket-updater.ps1 -r -s $SNOWFLAKES
-    fi
+    ARGS="-r"
 fi
 
+if [ ! -z $SNOWFLAKES ]; then
+    ARGS="$ARGS -s $SNOWFLAKES"
+fi
+
+if [ -f /root/bucket/bin/auto-pr.ps1 ]; then
+    pwsh /root/bucket/bin/auto-pr.ps1 $ARGS
+fi
+if [ -f /root/bucket/bin/bucket-updater.ps1 ]; then
+    pwsh /root/bucket/bin/bucket-updater.ps1 $ARGS
+fi
