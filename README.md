@@ -4,8 +4,8 @@
 This image allows for automated updates of [Scoop](http://scoop.sh) buckets.
 
 ## Usage
-- Add `bin\bucket-updater.ps1` to your Bucket (see: [bucket-updater.ps1](#example-bin_bucket-updater.ps1))
-- Create `docker-compose.yml` on your Docker Host (see: [docker-compose.yml](#example-docker-compose.yml))
+- Add `bin\bucket-updater.ps1` to your Bucket (see: [bucket-updater.ps1](#example-docker-composeyml))
+- Create `docker-compose.yml` on your Docker Host (see: [docker-compose.yml](#example-binbucket-updaterps1))
 - Run `docker-compose up`
 - Add the generated public key to your GitHub account (see: ssh volume)
 
