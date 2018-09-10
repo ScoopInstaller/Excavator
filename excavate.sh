@@ -13,7 +13,7 @@ find /root/log/*.log -mtime +2 -exec rm {} \;
 if [ ! -f /root/first_run ]; then
     # Update CRONTAB
     if [ ! -z "$CRONTAB" ]; then
-        echo "$CRONTAB root /bin/bash /root/excavate.sh > /root/log/mud-\$(date +'%Y%m%d-%H%M%S').log 2>&1" > /etc/cron.d/excavator
+        echo "$CRONTAB root /bin/bash /root/excavate.sh > /root/log/mud-\$(date +\"\%Y\%m\%d-\%H\%M\%S\").log 2>&1" > /etc/cron.d/excavator
     fi
 
     # Set git config settings

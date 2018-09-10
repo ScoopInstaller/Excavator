@@ -65,4 +65,4 @@ RUN echo '/root/scoop' > /etc/container_environment/SCOOP \
 # Install cronjob
 ADD excavate.sh /root/
 RUN chmod +x /root/excavate.sh \
-    && echo "$CRONTAB root /bin/bash /root/excavate.sh > /root/log/mud-\$(date +'%Y%m%d-%H%M%S').log 2>&1" > /etc/cron.d/excavator
+    && echo "$CRONTAB root /bin/bash /root/excavate.sh > /root/log/mud-\$(date +\"\%Y\%m\%d-\%H\%M\%S\").log" > /etc/cron.d/excavator
