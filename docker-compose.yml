@@ -53,6 +53,19 @@ services:
       SNOWFLAKES:
       BUCKET: "scoopinstaller/php"
       CRONTAB: "0 0 * * *"
+  games:
+    image: r15ch13/excavator:latest
+    deploy:
+      mode: global
+    volumes:
+      - ssh:/root/.ssh
+      - games-logs:/root/log
+    environment:
+      GIT_USERNAME: "Richard Kuhnt"
+      GIT_EMAIL: "r15ch13+git@gmail.com"
+      SNOWFLAKES:
+      BUCKET: "Calinou/scoop-games"
+      CRONTAB: "0 0 * * *"
 volumes:
   ssh:
   main-logs:
