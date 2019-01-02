@@ -66,9 +66,30 @@ services:
       SNOWFLAKES:
       BUCKET: "Calinou/scoop-games"
       CRONTAB: "0 0 * * *"
+  caddy:
+    image: abiosoft/caddy:no-stats
+    deploy:
+      mode: global
+    ports:
+      - "30015:2015"
+    configs:
+      - source: caddyfile
+        target: /etc/Caddyfile
+    volumes:
+      - main-logs:/srv/logs/main
+      - extras-logs:/srv/logs/extras
+      - versions-logs:/srv/logs/versions
+      - php-logs:/srv/logs/php
+      - games-logs:/srv/logs/games
+    environment:
+      ACME_AGREE: "true"
+configs:
+  caddyfile:
+    external: true
 volumes:
   ssh:
   main-logs:
   extras-logs:
   versions-logs:
   php-logs:
+  games-logs:

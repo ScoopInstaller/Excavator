@@ -1,0 +1,12 @@
+0.0.0.0
+
+tls off
+
+root /srv/logs
+
+browse
+
+log stdout
+
+errors stdout
+
