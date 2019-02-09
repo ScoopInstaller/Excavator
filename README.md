@@ -1,7 +1,7 @@
 # Excavator 🕳️
 [![](https://images.microbadger.com/badges/image/r15ch13/excavator.svg)](https://microbadger.com/images/r15ch13/excavator) [![](https://images.microbadger.com/badges/version/r15ch13/excavator.svg)](https://microbadger.com/images/r15ch13/excavator)
 
-This image allows for automated updates of [Scoop](http://scoop.sh) buckets.
+This image allows for automated updates of [Scoop](https://scoop.sh) buckets.
 
 ## Usage
 - Add `bin\bucket-updater.ps1` to your Bucket (see: [bucket-updater.ps1](#example-binbucket-updaterps1))
@@ -60,6 +60,9 @@ volumes:
 - [Main Bucket](https://github.com/lukesampson/scoop)
 - [Extras Bucket](https://github.com/lukesampson/scoop-extras)
 - [Versions Bucket](https://github.com/scoopinstaller/versions)
+
+## Logs
+Current logs can be found at [https://scoop.r15.ch](https://scoop.r15.ch/?sort=time&order=desc)
 
 # License
 [The MIT License (MIT)](https://r15ch13.mit-license.org/)
