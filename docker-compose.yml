@@ -100,6 +100,7 @@ services:
       - versions-logs:/srv/logs/versions
       - php-logs:/srv/logs/php
       - games-logs:/srv/logs/games
+      - java-logs:/srv/logs/java
     environment:
       ACME_AGREE: "true"
 configs:
