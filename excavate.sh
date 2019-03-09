@@ -61,7 +61,7 @@ else
 fi
 
 if [ ! -z $SNOWFLAKES ]; then
-    ARGS="$ARGS -s $SNOWFLAKES"
+    ARGS="$ARGS -SpecialSnowflakes $SNOWFLAKES"
 fi
 
 if [ -f /root/bucket/bin/auto-pr.ps1 ]; then
