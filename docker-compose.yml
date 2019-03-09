@@ -71,6 +71,20 @@ services:
       BUCKET: "Calinou/scoop-games"
       CRONTAB: "0 0 * * *"
       SCOOP_DEBUG: "true"
+  java:
+    image: r15ch13/excavator:latest
+    deploy:
+      mode: global
+    volumes:
+      - ssh:/root/.ssh
+      - java-logs:/root/log
+    environment:
+      GIT_USERNAME: "Richard Kuhnt"
+      GIT_EMAIL: "r15ch13+git@gmail.com"
+      SNOWFLAKES:
+      BUCKET: "se35710/scoop-java"
+      CRONTAB: "0 0 * * *"
+      SCOOP_DEBUG: "true"
   caddy:
     image: abiosoft/caddy:no-stats
     deploy:
@@ -98,3 +112,4 @@ volumes:
   versions-logs:
   php-logs:
   games-logs:
+  java-logs:
