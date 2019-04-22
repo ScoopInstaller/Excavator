@@ -57,7 +57,7 @@ volumes:
 ```
 
 ## These Scoop buckets get automated updates
-- [Main Bucket](https://github.com/lukesampson/scoop)
+- [Main Bucket](https://github.com/scoopinstaller/scoop-main)
 - [Extras Bucket](https://github.com/lukesampson/scoop-extras)
 - [Versions Bucket](https://github.com/scoopinstaller/versions)
 - [Games Bucket](https://github.com/Calinou/scoop-games) by [@Calinou](https://github.com/Calinou)
