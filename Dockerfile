@@ -3,7 +3,7 @@ FROM phusion/baseimage:latest
 LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
       org.label-schema.description="Base image for Scoop update services" \
       org.label-schema.url="https://github.com/lukesampson/scoop" \
-      org.label-schema.vcs-url="https://github.com/r15ch13/excavator" \
+      org.label-schema.vcs-url="https://github.com/scoopinstaller/excavator" \
       org.label-schema.schema-version="1.0.0-rc1"
 
 # Use baseimage-docker's init system.
