@@ -55,9 +55,9 @@ rm /root/cache/* 2> /dev/null
 echo 'Excavating ...'
 ARGS=
 if [ $METHOD == 'push' ]; then
-    ARGS="-p"
+    ARGS="-Push"
 else
-    ARGS="-r"
+    ARGS="-Request"
 fi
 
 if [ ! -z $SNOWFLAKES ]; then
