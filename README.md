@@ -59,9 +59,10 @@ volumes:
 ## These Scoop buckets get automated updates
 - [Main Bucket](https://github.com/scoopinstaller/scoop-main)
 - [Extras Bucket](https://github.com/lukesampson/scoop-extras)
-- [Versions Bucket](https://github.com/scoopinstaller/versions)
+- [Versions Bucket](https://github.com/ScoopInstaller/Versions)
+- [PHP Bucket](https://github.com/ScoopInstaller/PHP)
+- [Java Bucket](https://github.com/ScoopInstaller/Java)
 - [Games Bucket](https://github.com/Calinou/scoop-games) by [@Calinou](https://github.com/Calinou)
-- [Java Bucket](https://github.com/se35710/scoop-java) by [@se35710](https://github.com/se35710)
 
 ## Logs
 Current logs can be found at [https://scoop.r15.ch](https://scoop.r15.ch/?sort=time&order=desc)
