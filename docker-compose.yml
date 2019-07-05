@@ -82,7 +82,7 @@ services:
       GIT_USERNAME: "Richard Kuhnt"
       GIT_EMAIL: "r15ch13+git@gmail.com"
       SNOWFLAKES:
-      BUCKET: "se35710/scoop-java"
+      BUCKET: "ScoopInstaller/Java"
       CRONTAB: "0 0 * * *"
       SCOOP_DEBUG: "true"
   caddy:
