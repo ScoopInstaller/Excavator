@@ -19,7 +19,7 @@ GIT_EMAIL=                  # For "git config user.email"
 # Optional:
 SNOWFLAKES=curl,brotli      # Programs that should always be updated (comma separated)
 CRONTAB=0 * * * *           # Change cron execution times (default: every hour)
-METHOD=push                 # push = pushs to $BUCKET (default) / request = pull-requst to $UPSTREAM
+METHOD=push                 # push = pushs to $BUCKET (default) / request = pull-request to $UPSTREAM
 UPSTREAM=<user>/<repo>      # Upstream GitHub Repo for Pull-Request creating
 SCOOP_DEBUG=true            # Enables Scoop debug output
 ```
