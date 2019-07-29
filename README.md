@@ -57,7 +57,7 @@ volumes:
 ```
 
 ## These Scoop buckets get automated updates
-- [Main Bucket](https://github.com/scoopinstaller/scoop-main)
+- [Main Bucket](https://github.com/ScoopInstaller/Main)
 - [Extras Bucket](https://github.com/lukesampson/scoop-extras)
 - [Versions Bucket](https://github.com/ScoopInstaller/Versions)
 - [PHP Bucket](https://github.com/ScoopInstaller/PHP)
