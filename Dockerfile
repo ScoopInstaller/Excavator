@@ -22,13 +22,13 @@ RUN mkdir -p /root/.ssh \
 VOLUME /root/.ssh /root/log
 
 # Expose environment variables
-ENV GIT_USERNAME=
-ENV GIT_EMAIL=
-ENV SNOWFLAKES=
-ENV BUCKET=
-ENV CRONTAB="0 * * * *"
-ENV METHOD=push
-ENV UPSTREAM=
+ENV GIT_USERNAME= \
+    GIT_EMAIL= \
+    SNOWFLAKES= \
+    BUCKET= \
+    CRONTAB="0 * * * *" \
+    METHOD=push \
+    UPSTREAM=
 
 # Download the Microsoft repository GPG keys
 RUN curl -L -O https://packages.microsoft.com/config/ubuntu/${POWERSHELL_BUILD}/packages-microsoft-prod.deb
