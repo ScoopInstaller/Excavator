@@ -9,7 +9,6 @@ LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-ARG HUB_VERSION=2.12.3
 ARG POWERSHELL_BUILD=18.04
 
 # Create required directories
@@ -47,11 +46,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install hub
-RUN curl -LO https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz \
-    && tar zxvvf hub-linux-amd64-${HUB_VERSION}.tgz \
-    && ./hub-linux-amd64-${HUB_VERSION}/install \
-    && rm hub-linux-amd64-${HUB_VERSION}.tgz \
-    && rm -rf hub-linux-amd64-${HUB_VERSION}/*
+ADD Get-Hub.ps1 /
+RUN pwsh -NoProfile ./Get-Hub.ps1
+RUN tar -xvf hub-linux-amd64.tgz --strip-components 2 --wildcards 'hub-linux-amd64-*/bin/hub' -C /usr/local/bin \
+    && rm hub-linux-amd64.tgz Get-Hub.ps1
 
 # Clone Scoops main repository
 RUN git config --global core.autocrlf true \
