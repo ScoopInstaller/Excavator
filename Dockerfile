@@ -48,7 +48,7 @@ RUN apt-get update \
 # Install hub
 ADD Get-Hub.ps1 /
 RUN pwsh -NoProfile ./Get-Hub.ps1
-RUN tar -xvf hub-linux-amd64.tgz --strip-components 2 --wildcards 'hub-linux-amd64-*/bin/hub' -C /usr/local/bin \
+RUN tar -xvf hub-linux-amd64.tgz --strip-components 2 --directory=/usr/bin --wildcards 'hub-linux-amd64-*/bin/hub' \
     && rm hub-linux-amd64.tgz Get-Hub.ps1
 
 # Clone Scoops main repository
