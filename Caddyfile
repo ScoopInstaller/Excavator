@@ -1,12 +1,9 @@
-0.0.0.0
+{
+    admin off
+}
 
-tls off
+http://localhost
 
-root /srv/logs
+root * /srv/logs
 
-browse
-
-log stdout
-
-errors stdout
-
+file_server browse

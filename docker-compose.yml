@@ -86,14 +86,12 @@ services:
       CRONTAB: "0 0 * * *"
       SCOOP_DEBUG: "true"
   caddy:
-    image: abiosoft/caddy:no-stats
+    image: r15ch13/excavator-caddy:latest
+    restart: unless-stopped
     deploy:
       mode: global
     ports:
-      - "30015:2015"
-    configs:
-      - source: caddyfile
-        target: /etc/Caddyfile
+      - "30015:80"
     volumes:
       - main-logs:/srv/logs/main
       - extras-logs:/srv/logs/extras
@@ -101,12 +99,13 @@ services:
       - php-logs:/srv/logs/php
       - games-logs:/srv/logs/games
       - java-logs:/srv/logs/java
-    environment:
-      ACME_AGREE: "true"
-configs:
-  caddyfile:
-    external: true
+      - caddy_data:/data
+      - caddy_config:/config
+
 volumes:
+  caddy_data:
+    external: true
+  caddy_config:
   ssh:
   main-logs:
   extras-logs:
