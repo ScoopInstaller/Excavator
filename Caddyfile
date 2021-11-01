@@ -2,7 +2,7 @@
     admin off
 }
 
-http://localhost
+http://localhost:2015
 
 root * /srv/logs
 

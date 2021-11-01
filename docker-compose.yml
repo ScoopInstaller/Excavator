@@ -91,7 +91,7 @@ services:
     deploy:
       mode: global
     ports:
-      - "30015:80"
+      - "30015:2015"
     volumes:
       - main-logs:/srv/logs/main
       - extras-logs:/srv/logs/extras
