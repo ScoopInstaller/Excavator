@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.11
+FROM phusion/baseimage:focal-1.1.0
 
 LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
       org.label-schema.description="Base image for Scoop update services" \
@@ -9,7 +9,7 @@ LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-ARG POWERSHELL_BUILD=18.04
+ARG POWERSHELL_BUILD=20.04
 
 # Create required directories
 RUN mkdir -p /root/.ssh \
