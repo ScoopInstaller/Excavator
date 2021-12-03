@@ -2,7 +2,7 @@ FROM phusion/baseimage:focal-1.1.0
 
 LABEL org.label-schema.maintainer="Richard Kuhnt <r15ch13+git@gmail.com>" \
       org.label-schema.description="Base image for Scoop update services" \
-      org.label-schema.url="https://github.com/lukesampson/scoop" \
+      org.label-schema.url="https://github.com/ScoopInstaller/Scoop" \
       org.label-schema.vcs-url="https://github.com/scoopinstaller/excavator" \
       org.label-schema.schema-version="1.0.0-rc1"
 
@@ -53,7 +53,7 @@ RUN tar -xvf hub-linux-amd64.tgz --strip-components 2 --directory=/usr/bin --wil
 
 # Clone Scoops main repository
 RUN git config --global core.autocrlf true \
-    && git clone https://github.com/lukesampson/scoop /root/scoop --depth=1
+    && git clone https://github.com/ScoopInstaller/Scoop /root/scoop --depth=1
 
 # Add fixed Scoop environment variables
 RUN echo '/root/scoop' > /etc/container_environment/SCOOP \

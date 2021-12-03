@@ -12,7 +12,7 @@ This image allows for automated updates of [Scoop](https://scoop.sh) buckets.
 ## Environment Variables
 The following Environment Variables are required for pushing changes to GitHub.
 ```
-BUCKET=<user>/<repo>        # GitHub Repo (e.g. lukesampson/scoop)
+BUCKET=<user>/<repo>        # GitHub Repo (e.g. ScoopInstaller/Extras)
 GIT_USERNAME=               # For "git config user.name"
 GIT_EMAIL=                  # For "git config user.email"
 
