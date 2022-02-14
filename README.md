@@ -3,6 +3,8 @@
 
 This image allows for automated updates of [Scoop](https://scoop.sh) buckets.
 
+**Note:** This image is no longer necessary - automated updates are handled by GitHub Actions now. Read https://github.com/ScoopInstaller/Scoop/wiki/Buckets#using-template for more information.
+
 ## Usage
 - Add `bin\bucket-updater.ps1` to your Bucket (see: [bucket-updater.ps1](#example-binbucket-updaterps1))
 - Create `docker-compose.yml` on your Docker Host (see: [docker-compose.yml](#example-docker-composeyml))
@@ -57,9 +59,6 @@ volumes:
 ```
 
 ## These Scoop buckets get automated updates
-- [Main Bucket](https://github.com/ScoopInstaller/Main)
-- [Extras Bucket](https://github.com/ScoopInstaller/Extras)
-- [Versions Bucket](https://github.com/ScoopInstaller/Versions)
 - [PHP Bucket](https://github.com/ScoopInstaller/PHP)
 - [Java Bucket](https://github.com/ScoopInstaller/Java)
 - [Games Bucket](https://github.com/Calinou/scoop-games) by [@Calinou](https://github.com/Calinou)
